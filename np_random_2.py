@@ -12,14 +12,13 @@ n = 10000
 n_bins = 20
 
 start = time.time()
-X = np.random.rand(n)
-print(time.time() - start)
-#X_uniform = np.random.random(n)
+for i in range(100):
+    X = np.random.rand(n)
+print((time.time() - start)/100)
 
-plt.figure(figsize=(7,9))
+plt.figure(figsize=(7,7))
 n1, bins1, patches1 = plt.hist(X, n_bins, facecolor='blue', density='true', alpha=0.5, label='Numpy')
-#n2, bins2, patches2 = plt.hist(X_uniform, n_bins, facecolor='red', alpha=0.5, label='Uniform')
-plt.axhline(y=1, xmin=0, xmax=1, hold=None,label='Uniform')
+plt.axhline(y=1, xmin=0, xmax=1,label='Uniform')
 plt.title("np.random.rand; n=10000")
 plt.legend()
 plt.show()
